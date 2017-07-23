@@ -11,8 +11,6 @@ class HomeController < ApplicationController
         end
         render file: '/public/app.html'
       end
-
-      format.json { render json: { some: 'data' } }
     end
   end
 end

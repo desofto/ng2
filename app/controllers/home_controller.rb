@@ -3,7 +3,11 @@ class HomeController < ApplicationController
     respond_to do |format|
       format.html do
         if Rails.env.development?
-          system("#{Rails.root}/node_modules/.bin/tsc")
+          result = `#{Rails.root}/node_modules/.bin/tsc`
+          if result.present?
+            render plain: result.split("\n").join("<br />")
+            return
+          end
         end
         render file: '/public/app.html'
       end

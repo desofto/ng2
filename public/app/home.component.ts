@@ -6,7 +6,6 @@ import {InputModel}           from './shared/input-model'
 import {FocusMe}              from './shared/focus-me'
 
 @Component({
-  selector: 'home',
   templateUrl: '/app/home.component.html',
   directives: [ContenteditableModel, InputModel, FocusMe]
 })

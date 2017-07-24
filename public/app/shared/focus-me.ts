@@ -1,11 +1,11 @@
-import {Directive, ElementRef, AfterContentChecked} from "angular2/core"
+import { Directive, ElementRef, AfterContentChecked } from 'angular2/core';
 
 @Directive({
   selector: '[focus-me]'
 })
 
 export class FocusMe implements AfterContentChecked {
-  private focused = false
+  private focused = false;
 
   constructor(
     private elementRef: ElementRef
@@ -14,8 +14,8 @@ export class FocusMe implements AfterContentChecked {
   ngAfterContentChecked() {
     if(!this.focused) {
       var el = this.elementRef.nativeElement;
-      (el.querySelector('div[contenteditable="true"],input') || el).focus()
-      this.focused = true
+      (el.querySelector('div[contenteditable="true"],input') || el).focus();
+      this.focused = true;
     }
   }
 }

@@ -1,5 +1,5 @@
-import {Component, Input, Output, EventEmitter} from "angular2/core"
-import {ContenteditableModel} from './contenteditable-model'
+import { Component, Input, Output, EventEmitter } from 'angular2/core';
+import { ContenteditableModel }                   from './contenteditable-model';
 
 @Component({
   selector: 'input-model',
@@ -8,14 +8,14 @@ import {ContenteditableModel} from './contenteditable-model'
 })
 
 export class InputModel {
-  @Input('model') model: any
-  @Output('modelChange') update = new EventEmitter()
+  @Input('model') model: any;
+  @Output('modelChange') update = new EventEmitter();
 
   onEdit(value) {
-    this.update.emit(value)
+    this.update.emit(value);
   }
 
   selectAllContent($event) {
-    setTimeout( () => document.execCommand('selectAll', false, null), 0 )
+    setTimeout( () => document.execCommand('selectAll', false, null), 0 );
   }
 }

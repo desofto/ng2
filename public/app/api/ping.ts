@@ -1,6 +1,6 @@
-import {Injectable}     from 'angular2/core'
-import {Http, Response} from 'angular2/http'
-import 'rxjs/add/operator/map'
+import { Injectable }     from 'angular2/core';
+import { Http, Response } from 'angular2/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 
@@ -10,6 +10,6 @@ export class PingApi {
   ) {}
 
   run() {
-    return this.http.get('/api/v1/ping').map((res:Response) => res.json())
+    return this.http.get('/api/v1/ping').map((res:Response) => res.json());
   }
 }

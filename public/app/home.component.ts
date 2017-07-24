@@ -1,11 +1,11 @@
-import {Component, OnInit}    from 'angular2/core'
-import {RouteParams}          from 'angular2/router'
+import { Component, OnInit }    from 'angular2/core';
+import { RouteParams }          from 'angular2/router';
 
-import {ContenteditableModel} from './shared/contenteditable-model'
-import {InputModel}           from './shared/input-model'
-import {FocusMe}              from './shared/focus-me'
+import { ContenteditableModel } from './shared/contenteditable-model';
+import { InputModel }           from './shared/input-model';
+import { FocusMe }              from './shared/focus-me';
 
-import {PingApi}              from './api/ping';
+import { PingApi }              from './api/ping';
 
 @Component({
   templateUrl: '/app/home.component.html',
@@ -18,13 +18,13 @@ export class HomeComponent implements OnInit {
     private ping: PingApi
   ) {}
 
-  message: String = 'Rails Ng2 Starter'
+  message: String = 'Rails Ng2 Starter';
 
   ngOnInit() {
-    this.message = 'test'
+    this.message = 'test';
 
     this.ping.run().subscribe(data => {
-      this.message = data.ping
-    })
+      this.message = data.ping;
+    });
   }
 }

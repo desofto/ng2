@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.message = 'test';
 
-    this.ping.run().subscribe(data => {
+    this.ping.run().then((data: any) => {
       this.message = data.ping;
     });
   }

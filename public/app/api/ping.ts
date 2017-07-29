@@ -10,6 +10,10 @@ export class PingApi {
   ) {}
 
   run() {
-    return this.http.get('/api/v1/ping').map((res:Response) => res.json());
+    return new Promise((resolve, reject) => {
+      this.http.get('/api/v1/ping').map((res:Response) => res.json()).subscribe((data: any) => {
+        resolve(data);
+      });
+    });
   }
 }

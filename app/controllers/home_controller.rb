@@ -3,6 +3,7 @@ class HomeController < ApplicationController
     respond_to do |format|
       format.html do
         if Rails.env.development?
+          `rm -r public/app/*.js*`
           result = `#{Rails.root}/node_modules/.bin/tsc`
           if result.present?
             render plain: result.split("\n").join("<br />")

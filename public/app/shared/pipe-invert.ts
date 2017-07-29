@@ -5,7 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class PipeInvert implements PipeTransform {
-  transform(value: string): string {
-    return value.split("").reverse().join("");
+  transform(value: any): any {
+    if( value instanceof Array ) {
+      return value.slice().reverse();
+    } else {
+      return value.split("").reverse().join("");
+    }
   }
 }

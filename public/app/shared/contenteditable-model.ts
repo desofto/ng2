@@ -1,5 +1,5 @@
-import { Directive, ElementRef, Input, Output, EventEmitter, OnChanges } from 'angular2/core';
-import { isPropertyUpdated } from 'angular2/src/common/forms/directives/shared';
+import { Directive, ElementRef, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+//import { isPropertyUpdated } from '@angular/src/common/forms/directives/shared';
 
 @Directive({
   selector: '[contenteditableModel]',
@@ -17,11 +17,11 @@ export class ContenteditableModel implements OnChanges {
 
   constructor(private elementRef: ElementRef) {}
 
-  ngOnChanges(changes) {
-    if( isPropertyUpdated(changes, this.lastViewModel) ) {
+  ngOnChanges(changes: any) {
+    //if( isPropertyUpdated(changes, this.lastViewModel) ) {
       this.lastViewModel = this.model;
       this.refreshView();
-    }
+    //}
   }
 
   onEdit() {

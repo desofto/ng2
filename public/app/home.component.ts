@@ -1,16 +1,14 @@
-import { Component, OnInit }    from 'angular2/core';
-import { RouteParams }          from 'angular2/router';
-
-import { ContenteditableModel } from './shared/contenteditable-model';
-import { InputModel }           from './shared/input-model';
-import { FocusMe }              from './shared/focus-me';
+import { Component, OnInit }    from '@angular/core';
 
 import { PingApi }              from './api/ping';
 
 @Component({
+  selector: 'my-app',
   templateUrl: '/app/home.component.html',
-  directives: [ContenteditableModel, InputModel, FocusMe],
   viewProviders: [PingApi],
+  styles: [
+    'button.active { background-color: blue; }'
+  ]
 })
 
 export class HomeComponent implements OnInit {
@@ -27,4 +25,12 @@ export class HomeComponent implements OnInit {
       this.message = data.ping;
     });
   }
+
+  setState(state: String): void {
+    this.state = state;
+  }
+
+  states: Array<string> = ['open', 'closed', 'waiting'];
+
+  state: String = 'closed'
 }

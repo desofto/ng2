@@ -2,4 +2,19 @@
 
 <div contenteditable="true" [(contenteditableModel)]="message"></div>
 
-<input-model focus-me [(model)]="message"></input-model>
+<input-model-selected focus-me [(model)]="message"></input-model-selected>
+
+<div>
+  <button [ngClass]="{ 'active': s == state }" (click)="setState(s)" [value]="s" *ngFor="let s of states">
+    {{ s }}
+  </button>
+</div>
+
+{{ state }}
+
+<div [ngSwitch]="state">
+  <div *ngSwitchCase="'open'">OPEN</div>
+  <div *ngSwitchCase="'closed'">CLOSED</div>
+  <div *ngSwitchCase="'waiting'">WAITING</div>
+  <div *ngSwitchDefault></div>
+</div>

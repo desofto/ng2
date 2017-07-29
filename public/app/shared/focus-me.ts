@@ -1,4 +1,4 @@
-import { Directive, ElementRef, AfterContentChecked } from 'angular2/core';
+import { Directive, ElementRef, AfterContentChecked } from '@angular/core';
 
 @Directive({
   selector: '[focus-me]'

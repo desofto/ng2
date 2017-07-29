@@ -1,25 +1,25 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <script src="/assets/intl/dist/Intl.js"></script>
-    <script src="/assets/intl/locale-data/jsonp/en.js"></script>
-
-    <script src="/assets/es6-shim/es6-shim.min.js"></script>
-    <script src="/assets/systemjs/dist/system-polyfills.js"></script>
-
-    <script src="/assets/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="/assets/systemjs/dist/system.src.js"></script>
-    <script src="/assets/rxjs/bundles/Rx.js"></script>
-    <script src="/assets/angular2/bundles/angular2.dev.js"></script>
-    <script src="/assets/angular2/bundles/http.dev.js"></script>
-    <script src="/assets/angular2/bundles/router.dev.js"></script>
-
-    <script src="app/app.js"></script>
-
     <title>ng2</title>
-  </head>
-  <body>
     <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
 
-    <app-router>Loading...</app-router>
+    <!-- Polyfill(s) for older browsers -->
+    <script src="/assets/core-js/client/shim.min.js"></script>
+
+    <script src="/assets/zone.js/dist/zone.js"></script>
+    <script src="/assets/systemjs/dist/system.src.js"></script>
+
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app/boot.js').catch(function(err){ console.error(err); });
+    </script>
+  </head>
+
+  <body>
+    <my-app>Loading...</my-app>
   </body>
 </html>

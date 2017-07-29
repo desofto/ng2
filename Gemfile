@@ -14,3 +14,5 @@ gem 'puma'
 gem 'haml'
 
 gem 'pry-rails'
+
+gem 'yarn'

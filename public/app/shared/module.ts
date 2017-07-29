@@ -3,6 +3,7 @@ import { NgModule }             from '@angular/core';
 import { ContenteditableModel } from './contenteditable-model';
 import { InputModelSelected }   from './input-model-selected';
 import { FocusMe }              from './focus-me';
+import { PipeInvert }           from './pipe-invert';
 
 @NgModule({
   imports: [
@@ -10,12 +11,14 @@ import { FocusMe }              from './focus-me';
   declarations: [
     ContenteditableModel,
     InputModelSelected,
-    FocusMe
+    FocusMe,
+    PipeInvert
   ],
   exports: [
     ContenteditableModel,
     InputModelSelected,
-    FocusMe
+    FocusMe,
+    PipeInvert
   ]
 })
 

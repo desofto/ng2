@@ -18,7 +18,7 @@
 </div>
 
 <span *ngIf="state == 'open' || state == 'closed'">
-  {{ state }}
+  {{ state | invert }}
 </span>
 
 <div [ngSwitch]="state" [hidden]="state == 'waiting'">

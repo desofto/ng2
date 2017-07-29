@@ -5,7 +5,9 @@ import { PingApi }              from './api/ping';
 @Component({
   selector: 'my-app',
   templateUrl: '/app/home.component.html',
-  viewProviders: [PingApi],
+  viewProviders: [
+    PingApi
+  ],
   styles: [
     'button.active { background-color: blue; }'
   ]

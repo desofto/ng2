@@ -10,6 +10,13 @@
   </button>
 </div>
 
+<div>
+  <label *ngFor="let s of states">
+    <input type="radio" name="states" [value]="s" [(ngModel)]="state" />
+    {{ s }}
+  </label>
+</div>
+
 {{ state }}
 
 <div [ngSwitch]="state">

@@ -17,9 +17,11 @@
   </label>
 </div>
 
-{{ state }}
+<span *ngIf="state == 'open' || state == 'closed'">
+  {{ state }}
+</span>
 
-<div [ngSwitch]="state">
+<div [ngSwitch]="state" [hidden]="state == 'waiting'">
   <div *ngSwitchCase="'open'">OPEN</div>
   <div *ngSwitchCase="'closed'">CLOSED</div>
   <div *ngSwitchCase="'waiting'">WAITING</div>
